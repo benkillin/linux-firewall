@@ -8,6 +8,8 @@ undo_iptables.sh is a script that undoes all the rules and sets the iptables up 
 
 allowed_{inbound,outbound,forward,localhost}_ports.txt these text files specify a protocol, port, and description for what traffic is allowed through the different INPUT, OUTPUT, and FORWARD chains, in addition to specifying which traffic can communicate on localhost. NOTE: DO NOT HAVE AN EMPTY LINE AT THE END OF THESE FILES!
 
+blocked_ips.txt is a list of ip addresses that should never be allowed to communicate with the machine. Again, no blank lines at the end of the file allowed.
+
 firewall.init.d.sh is an example init script for applying the firewall rules on bootup. To use this, execute:
 ```
 # cp firewall.init.d.sh /etc/init.d/
