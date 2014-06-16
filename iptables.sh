@@ -84,6 +84,8 @@ awk '{ print "/sbin/iptables -A FORWARD -p " $1 " --sport 1024:65535 --dport " $
 
 #####################
 # LOCALHOST ONLY 
+# we type out the loopback network here instead of using the variable because it got all jacked up 
+# mixing the bash vars with the awk vars and I didn't want to deal with it.
 awk '{ print "/sbin/iptables -A OUTPUT -p " $1 " -s 127.0.0.1/8 -d 127.0.0.1/8 --sport " $2 " -j ACCEPT"; \
        print "/sbin/iptables -A OUTPUT -p " $1 " -s 127.0.0.1/8 -d 127.0.0.1/8 --dport " $2 " -j ACCEPT"; \
        print "/sbin/iptables -A INPUT -p " $1 " -s 127.0.0.1/8 -d 127.0.0.1/8 --sport " $2 " -j ACCEPT"; \
