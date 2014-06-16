@@ -1,0 +1,8 @@
+udp 53 dns
+tcp 22 ssh
+tcp 25 smtp
+tcp 80 http
+tcp 443 https
+udp 123 ntp
+tcp 9000:31000 i2p peer outbound
+udp 9000:31000 i2p peer outbound
