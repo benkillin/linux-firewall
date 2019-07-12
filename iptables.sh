@@ -45,9 +45,9 @@ allowedv6_localhost="/root/firewall/allowedv6_localhost_ports.txt";
 # Allow docker
 #/sbin/iptables -A INPUT -i docker0 -j ACCEPT
 #/sbin/iptables -A INPUT -i docker0 --dport 443 -j ACCEPT
-#/sbin/iptables -A FORWARD -d 172.17.42.0/16 -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-#/sbin/iptables -A FORWARD -d 172.17.42.0/16 -o docker0 -j ACCEPT
-#/sbin/iptables -A FORWARD -s 172.17.42.0/16 -i docker0 -j ACCEPT
+#/sbin/iptables -A FORWARD -d 172.16.0.0/12 -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+#/sbin/iptables -A FORWARD -d 172.16.0.0/12 -o docker0 -j ACCEPT
+#/sbin/iptables -A FORWARD -s 172.16.0.0/12 -i docker0 -j ACCEPT
 #/sbin/iptables -A FORWARD -s 0.0.0.0/0 -i docker0 -j ACCEPT
 #/sbin/iptables -A OUTPUT -o docker0 -j ACCEPT
 
