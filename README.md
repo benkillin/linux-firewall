@@ -10,6 +10,9 @@ allowed_{inbound,outbound,forward,localhost}_ports.txt these text files specify 
 
 blocked_ips.txt is a list of ip addresses that should never be allowed to communicate with the machine. Again, no blank lines at the end of the file allowed.
 
+**For IPV6 specific rules**, you can use allowedv6_{inbound,outbound,forward,localhost}_ports.txt files and then you must also:
+ - Edit iptables.sh line near the top starting with *use_ipv4_with_ipv6=true;* to be **`use_ipv4_with_ipv6=false`**;
+
 firewall.init.d.sh is an example init script for applying the firewall rules on bootup. To use this, execute:
 ```
 # cp firewall.init.d.sh /etc/init.d/
